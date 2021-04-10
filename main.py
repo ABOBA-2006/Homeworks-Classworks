@@ -13,6 +13,7 @@ def func(filename):
 generator_3000 = func('test.txt')
 next(generator_3000)
 
+generator_3000.send('previous')
 print(next(generator_3000))
 generator_3000.send('next')
 print(next(generator_3000))
