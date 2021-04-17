@@ -14,10 +14,16 @@ def calculator(x, y, ext):
 
 try:
     calculator(a, b, c)
-except ValueError:
+except (ValueError, TypeError):
     print('Please enter only int or float type')
-except ZeroDivisionError:
-    print("Please don't enter zero when you want to use '/'")
+except ArithmeticError:
+    print("Please learn math before using my calculator")
+except KeyboardInterrupt:
+    print("Please don't do this mistake")
+except OSError:
+    print("Please repair your OS")
+except LookupError:
+    print("Please enter smaller number")
 else:
     print(calculator(a, b, c))
     print('All was good. Thx )))')
