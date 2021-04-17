@@ -4,6 +4,8 @@ c = input('Enter what to do: ')
 
 
 def calculator(x, y, ext):
+    if ext != '+' and ext != '-' and ext != '/' and ext != '*':
+        raise ValueError()
     answer = 0
     answer += float(x) + float(y) if ext == '+' else 0
     answer += float(x) * float(y) if ext == '*' else 0
@@ -15,7 +17,7 @@ def calculator(x, y, ext):
 try:
     calculator(a, b, c)
 except (ValueError, TypeError):
-    print('Please enter only int or float type')
+    print("Please enter only int or float type and use only '+', '-', '/', '*' ")
 except ArithmeticError:
     print("Please learn math before using my calculator")
 except KeyboardInterrupt:
